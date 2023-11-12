@@ -13,4 +13,5 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     List<Usuario> findBynomeUser (@Param("nomeUser") String name);
+
 }

@@ -7,6 +7,7 @@ public class UsuarioForm {
 
     private String email;
     private String nomeUser;
+    private String password;
     private String idGoogle;
     private Integer nivel;
     private Long rota_id;

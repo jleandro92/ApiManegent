@@ -31,6 +31,7 @@ public class RotaController {
 
          return listRotas;
       }
+
     @PutMapping("rota/{rotaId}/addParada/{paradaId}")
     public Rota addParada (@PathVariable("rotaId") Long rotaId,
      @PathVariable("paradaId") Long paradaId){
@@ -38,10 +39,9 @@ public class RotaController {
         return rotaService.addParada(rotaId,paradaId);
 
      }
-         @PutMapping("rota/{rotaId}/addOnibus/{onibusId}")
-        public Rota addOnibus (@PathVariable("rotaId") Long rotaId,
-        @PathVariable("onibusId") Long onibusId){
+     @PutMapping("rota/{rotaId}/addOnibus/{onibusId}")
+     public Rota addOnibus (@PathVariable("rotaId") Long rotaId, @PathVariable("onibusId") Long onibusId){
 
         return rotaService.addOnibus(rotaId, onibusId);
-   }
+      }
 }

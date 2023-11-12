@@ -9,5 +9,4 @@ public interface UsuarioService {
     Usuario removerfavorito(Long usuarioId, Long rotaId);
 
 
-    void salvarDados(Usuario dado);
 }

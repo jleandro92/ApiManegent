@@ -27,15 +27,12 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
-    @PostMapping("email")
-    public ResponseEntity<Object> processEmail(@RequestBody @Valid EmailDto emailDto) {
-        try {
-            emailService.sendEmail(emailDto.convertToEmailModel());
-            return ResponseEntity.ok("E-mail processed successfully in the notification API.");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing email in the notification API.");
-        }
+    @PostMapping("/email")
+    public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto) {
+        return new ResponseEntity<>(emailService.sendEmail(emailDto.convertToEmailModel()), HttpStatus.CREATED);
     }
+
+
     @GetMapping("/email")
     public ResponseEntity<Page<EmailModel>> getAllEmails(@PageableDefault(page = 0, size = 5, sort = "emailId", direction = Sort.Direction.DESC) Pageable pageable){
         logger.trace("TRACE");

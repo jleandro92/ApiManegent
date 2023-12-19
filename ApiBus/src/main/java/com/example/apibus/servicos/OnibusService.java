@@ -1,6 +1,6 @@
 package com.example.apibus.servicos;
 
-import com.example.apibus.entidade.Onibus;
+import com.example.apibus.entidades.Onibus;
 
 public interface OnibusService {
 

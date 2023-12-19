@@ -1,10 +1,11 @@
 package com.example.apibus.repositorys;
 
 
-import com.example.apibus.entidade.Usuario;
+import com.example.apibus.entidades.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
@@ -14,4 +15,5 @@ import java.util.List;
 public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     List<Usuario> findBynomeUser (@Param("nomeUser") String name);
 
+    UserDetails findByEmail(String email);
 }

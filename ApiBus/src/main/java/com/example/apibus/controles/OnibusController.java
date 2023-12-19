@@ -1,8 +1,8 @@
 package com.example.apibus.controles;
 
-import com.example.apibus.entidade.Onibus;
-import com.example.apibus.entidade.OnibusForm;
-import com.example.apibus.entidade.Rota;
+import com.example.apibus.entidades.Onibus;
+import com.example.apibus.entidades.OnibusForm;
+import com.example.apibus.entidades.Rota;
 import com.example.apibus.repositorys.OnibusRepository;
 import com.example.apibus.repositorys.RotaRepository;
 import com.example.apibus.servicos.OnibusService;
@@ -10,6 +10,7 @@ import com.example.apibus.servicos.OnibusService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/")
 public class OnibusController {
 
@@ -52,7 +54,6 @@ public class OnibusController {
             Rota rota = rotaRepository.findById(ob.getRota_id()).get();
             onibus.setRota(rota);
         }
-
 
         return onibusRepository.save(onibus);
     }

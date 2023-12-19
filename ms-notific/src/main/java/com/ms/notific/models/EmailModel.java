@@ -29,4 +29,6 @@ public class EmailModel implements Serializable {
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
 
+    
+
 }

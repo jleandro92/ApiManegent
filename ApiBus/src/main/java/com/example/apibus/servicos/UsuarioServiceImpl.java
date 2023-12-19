@@ -1,9 +1,7 @@
 package com.example.apibus.servicos;
 
-import com.example.apibus.repositorys.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.apibus.entidade.Usuario;
+import com.example.apibus.entidades.Usuario;
 
 
 
@@ -21,20 +19,11 @@ public class UsuarioServiceImpl implements UsuarioService {
        
         throw new UnsupportedOperationException("Unimplemented method 'removerfavorito'");
     }
-
-    @Autowired
-    private UsuarioRepository usuarioRepository;  // Suponha que você tenha um repositório chamado UsuarioRepository
-
-    @Override
-    public void salvarDados(Usuario usuario) {
-
-        usuarioRepository.save(usuario);
-    }
+    
 
 
 
 
 
-
-
+    
 }

@@ -1,7 +1,7 @@
 package com.example.apibus.servicos;
 
-import com.example.apibus.entidade.Onibus;
-import com.example.apibus.entidade.Parada;
+import com.example.apibus.entidades.Onibus;
+import com.example.apibus.entidades.Parada;
 import com.example.apibus.repositorys.OnibusRepository;
 import com.example.apibus.repositorys.ParadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
